@@ -4,7 +4,7 @@
 
 pkgname=mininet
 pkgver=2.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Emulator for rapid prototyping of Software Defined Networks'
 depends=('python' 'iproute2' 'net-tools' 'iputils' 'inetutils' 'iperf' 'ethtool'
          'libcgroup' 'openvswitch' 'psmisc')
@@ -26,7 +26,7 @@ sha256sums=('1b16ee53ddb9a34a3751a77517643bda2286fc31be123209e84884d0697107b0'
             '0a85f8a5ce2dd900d4f874849b28301aa47d7b9d7b03ed405c973d917d98383a'
             '7258329a8df02c2b4bc87697daff12bc45ce8b2fc3145d2b6c520a8dd7ad8986')
 
-prepare () {
+prepare() {
     cd "$srcdir/openflow"
     sed '/^include debian\/automake.mk/d' -i Makefile.am
     # Patch controller to handle more than 16 switches
@@ -41,7 +41,7 @@ prepare () {
         -e '/^[[:space:]]*$(PYTHON) /d'
 }
 
-build () {
+build() {
     cd "$srcdir/openflow"
     autoreconf --install --force
     ./configure --prefix=/usr --sbindir=/usr/bin
@@ -52,7 +52,7 @@ build () {
     python -m build --wheel --no-isolation
 }
 
-package () {
+package() {
     cd "$srcdir/openflow"
     make DESTDIR="${pkgdir}" install
 
@@ -65,3 +65,5 @@ package () {
         dist/*.whl
     install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/mininet/LICENSE"
 }
+
+# vim: set sw=4 ts=4 et:
