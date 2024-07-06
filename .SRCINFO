@@ -1,13 +1,14 @@
 pkgbase = mininet
 	pkgdesc = Emulator for rapid prototyping of Software Defined Networks
 	pkgver = 2.3.0
-	pkgrel = 4
+	pkgrel = 5
 	url = https://github.com/mininet/mininet
 	install = mininet.install
 	arch = x86_64
 	license = custom
 	makedepends = git
 	makedepends = help2man
+	makedepends = python-setuptools
 	makedepends = python-build
 	makedepends = python-installer
 	makedepends = python-wheel

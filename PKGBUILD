@@ -4,7 +4,7 @@
 
 pkgname=mininet
 pkgver=2.3.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Emulator for rapid prototyping of Software Defined Networks'
 depends=('python' 'iproute2' 'net-tools' 'iputils' 'inetutils' 'iperf' 'ethtool'
          'libcgroup' 'openvswitch' 'psmisc')
@@ -12,7 +12,8 @@ optdepends=('xorg-xhost: for X11 forwarding'
             'socat: for X11 forwarding'
             'xterm: required for MiniEdit'
             'tk: required for MiniEdit')
-makedepends=('git' 'help2man' 'python-build' 'python-installer' 'python-wheel')
+makedepends=('git' 'help2man' 'python-setuptools' 'python-build'
+             'python-installer' 'python-wheel')
 arch=('x86_64')
 url='https://github.com/mininet/mininet'
 license=('custom')
