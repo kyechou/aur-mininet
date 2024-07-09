@@ -3,8 +3,8 @@
 # Maintainer: Kuan-Yen Chou <kuanyenchou@gmail.com>
 
 pkgname=mininet
-pkgver=2.3.0
-pkgrel=5
+pkgver=2.3.1b4
+pkgrel=1
 pkgdesc='Emulator for rapid prototyping of Software Defined Networks'
 depends=('python' 'iproute2' 'net-tools' 'iputils' 'inetutils' 'iperf' 'ethtool'
          'libcgroup' 'openvswitch' 'psmisc')
@@ -22,7 +22,7 @@ source=("https://github.com/mininet/mininet/archive/refs/tags/$pkgver.tar.gz"
         'git+https://github.com/mininet/openflow'   # for UserSwitch
         'fix-openflow-strlcpy.patch'
         'fix-openflow-w-gcc-14-clang-17.patch')
-sha256sums=('1b16ee53ddb9a34a3751a77517643bda2286fc31be123209e84884d0697107b0'
+sha256sums=('fd415abc49af04a6518589da26cea0b2ecf004dcbc801f91e07eb7244090741d'
             'SKIP'
             '0a85f8a5ce2dd900d4f874849b28301aa47d7b9d7b03ed405c973d917d98383a'
             '7258329a8df02c2b4bc87697daff12bc45ce8b2fc3145d2b6c520a8dd7ad8986')
